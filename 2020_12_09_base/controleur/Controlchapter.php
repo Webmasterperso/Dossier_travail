@@ -31,8 +31,14 @@ function onechapter()
   require('view/Viewonechapter.php');
 }
 
-function newonechapter(){
+function newchapter(){
   $modelchapter = new Modelchapter();
+  $affectedLines = $modelchapter->savechapter($_POST['titlechapter'], $_POST['textchapter']);
+
+  if ($affectedLines === false) {
+    throw new Exception('Impossible d\'ajouter un chapitre !');
+  } 
+
 }
 
 function addComment()

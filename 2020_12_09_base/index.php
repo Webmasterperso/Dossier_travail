@@ -11,9 +11,6 @@ if (isset($_GET['id_chapter']) && $_GET['id_chapter'] > 0) {
     
     onechapter();
 }
-
-
-
 else {
     if (isset($_POST['public'])) {
         echo 'bonjour postpublish';

@@ -28,7 +28,7 @@ class Modelchapter
         return $datachapter;
     }
 
-    public function savechapter()
+    public function savechapter($chaptertitle, $chaptertext)
     {
         $db = $this->dbConnect();
         $chapter = $db->prepare('INSERT INTO chapter(title_chapter, text_chapter, date_chapter) VALUES(?, ?, NOW())');
