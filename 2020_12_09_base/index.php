@@ -1,6 +1,7 @@
 <?php
 require('controleur/Controlchapter.php');
 echo 'publisher = ' . $_POST['public'] . '</br>';
+echo 'newchapter = ' . $_POST['titlechapter'] . ' - ' . $_POST['Enregistrer'] .'</br>';
 
 if (isset($_GET['id_chapter']) && $_GET['id_chapter'] > 0) {
     echo 'bonjour get ' . $_GET['id_chapter'];
@@ -20,4 +21,15 @@ else {
     listchapter();
     listcomment();
 }
+
+if(isset($_POST['textchapter']) && isset($_POST['Enregistrer'])) {
+    echo 'bonjour postnouveauchap';
+    newchapter();
+}
+else {
+
+    modifchapter();
+}
+
+
 ?>

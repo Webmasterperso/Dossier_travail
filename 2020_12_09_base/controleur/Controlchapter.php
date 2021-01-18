@@ -26,19 +26,29 @@ function onechapter()
   $modelcomment = new Modelcomment();
   $datachapter = $modelchapter->readonechapter($_GET['id_chapter']);
   $commentonechapter = $modelcomment->readcommentonechapter($_GET['id_chapter']);
-
-
   require('view/Viewonechapter.php');
 }
 
-function newchapter(){
+function modifchapter()
+{
   $modelchapter = new Modelchapter();
-  $affectedLines = $modelchapter->savechapter($_POST['titlechapter'], $_POST['textchapter']);
+  
+  $datachapter = $modelchapter->readonechapter($_GET['id_chapter']);
 
-  if ($affectedLines === false) {
-    throw new Exception('Impossible d\'ajouter un chapitre !');
-  } 
+  require('view/Vieweditchapter.php');
+}
 
+
+function newchapter(){
+  $modelnewchapter = new Modelchapter();
+  $affectedLinesnewchapter = $modelnewchapter->savenewchapter($_POST['titlechapter'], $_POST['textchapter']);
+
+  if ($affectedLinesnewchapter === false) {
+    throw new Exception('Impossible d\'ajouter un nouveau chapitre !');
+  } else {
+    //header('Location: index.php?id=' . $_GET['id_chapter']);
+  }
+  require('view/Vieweditchapter.php');
 }
 
 function addComment()

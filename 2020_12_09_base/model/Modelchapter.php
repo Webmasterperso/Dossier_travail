@@ -28,14 +28,23 @@ class Modelchapter
         return $datachapter;
     }
 
-    public function savechapter($chaptertitle, $chaptertext)
+    public function savenewchapter($chaptertitle, $chaptertext)
     {
         $db = $this->dbConnect();
-        $chapter = $db->prepare('INSERT INTO chapter(title_chapter, text_chapter, date_chapter) VALUES(?, ?, NOW())');
-        $affectedLines = $chapter->execute(array($chaptertitle, $chaptertext));
+        $chapter = $db->prepare('INSERT INTO chapter(title_chapter, author_chapter, text_chapter, date_chapter) VALUES(?, "Denis Masson", ?, NOW())');
+        $affectedLinesnewchapter = $chapter->execute(array($chaptertitle, $chaptertext));
         
-        return $affectedLines;
+        return $affectedLinesnewchapter;
 
+    }
+
+    public function publicationchapter($chaptertitle, $chapterauthor, $chaptertext, $chapterid)
+    {
+        $db = $this->dbConnect();
+        $chapter = $db->prepare('UPDATE chapter SET title_chapter=?, author_chapter=?, date_chapter=NOW(), text_chapter=?, publication_chapter="2" WHERE id_chapter=?');
+        $affectedLines = $chapter->execute(array($chaptertitle, $chapterauthor, $chaptertext, $chapterid));
+
+        return $affectedLines;
     }
 
     function dbConnect()

@@ -23,10 +23,11 @@
         echo '<p><strong>' . htmlspecialchars($datachapters['title_chapter']) . '</strong> le ' . $datachapters['date_chapter_fr'] . '</p>';
         echo '<p>' . nl2br(htmlspecialchars($datachapters['text_chapter'])) . '</p>';
         echo '<p><a href="index.php?id_chapter=' . $datachapters['id_chapter'] . '">Détails et Commentaires</a></em>';
+        echo '<p><a href="index.php?id_chapter=' . $datachapters['id_chapter'] . '">modifier le chapitre</a></em>';
     }
     ?>
 
-    <p><a href="view/Viewlistcomment.php">Liste Commentaires</a></em>';
+    <p><a href="view/Vieweditchapter.php">Ajouter un chapitre</a></p>
 </body>
 
 </html>

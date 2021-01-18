@@ -20,7 +20,7 @@
         </h3>
 
         <p>
-            <?= nl2br(htmlspecialchars($datachapter['text_chapter'])) ?>
+             <?= nl2br(htmlspecialchars($datachapter['text_chapter']))?>
         </p>
     </div>
 
