@@ -34,9 +34,18 @@ function modifchapter()
   $modelchapter = new Modelchapter();
   
   $datachapter = $modelchapter->readonechapter($_GET['id_chapter']);
+  //$datachapter = $modelchapter->publicationchapter($_GET['id_chapter']);
 
+  
   require('view/Vieweditchapter.php');
 }
+
+function savemoditchapter()
+{
+  $modelchapter = new Modelchapter();
+  $datachapter = $modelchapter->publicationchapter($_POST['titlechapter'], $_POST['textchapter'], $_GET['id_chapter']);
+}
+
 
 
 function newchapter(){

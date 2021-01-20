@@ -38,11 +38,11 @@ class Modelchapter
 
     }
 
-    public function publicationchapter($chaptertitle, $chapterauthor, $chaptertext, $chapterid)
+    public function publicationchapter($chaptertitle, $chaptertext, $chapterid)
     {
         $db = $this->dbConnect();
-        $chapter = $db->prepare('UPDATE chapter SET title_chapter=?, author_chapter=?, date_chapter=NOW(), text_chapter=?, publication_chapter="2" WHERE id_chapter=?');
-        $affectedLines = $chapter->execute(array($chaptertitle, $chapterauthor, $chaptertext, $chapterid));
+        $chapter = $db->prepare('UPDATE chapter SET title_chapter=?, date_chapter=NOW(), text_chapter=?, publication_chapter="2" WHERE id_chapter=?');
+        $affectedLines = $chapter->execute(array($chaptertitle, $chaptertext, $chapterid));
 
         return $affectedLines;
     }

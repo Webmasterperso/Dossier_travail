@@ -9,14 +9,14 @@
 
 <body>
     <h1>Billet simple pour l'Alaska - Nouveau chapitre</h1>
-    <form action="../index.php" method="post">
+    <form action="index.php?id_chapter=<?= $_GET['id_chapter'] ?>" method="post">
         <div>
             <label for="titlechapter">Titre du chapitre</label><br />
             <input type="text" id="titlechapter" name="titlechapter" value="<?= htmlspecialchars($datachapter['title_chapter']); ?>" />
         </div>
         <div>
             <label for="textchapter">Texte</label><br />
-            <textarea id="textchapter" name="textchapter" cols="80" rows="20" ><? echo nl2br(htmlspecialchars($datachapter['text_chapter'])); ?></textarea>
+            <textarea id="textchapter" name="textchapter" cols="80" rows="20"><? echo nl2br(htmlspecialchars($datachapter['text_chapter'])); ?></textarea>
         </div>
         <div>
             <?php
