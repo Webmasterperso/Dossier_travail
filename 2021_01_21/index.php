@@ -1,9 +1,9 @@
 <?php
-require('controleur/Control.php');
+require('controleur/Controlchapter.php');
 
 echo 'publisher = ' . $_POST['public'] . '</br>';
 echo 'chatper = ' . $_GET['id_chapter'] . ' / ' . $_POST['titlechapter'] . ' / ' . $_POST['textchapter'] . ' - ' . $_POST['Enregistrer'] .'</br>';
-echo 'user = ' . $_POST['user'] . ' / ' . $_POST['password'] .'</br>';
+
 
 
 if(isset($_POST['textchapter']) && isset($_POST['Enregistrer'])) {
@@ -39,10 +39,5 @@ if (isset($_GET['id_chapter']) && $_GET['id_chapter'] > 0) {
     listcomment();
 }
 
-if (isset($_POST['user']) && isset($_POST['password'])) {
-    $user = htmlspecialchars($_POST['user']);
-    $password =htmlspecialchars($_POST['password']);
-    echo 'user : ' . $user . ' / passeword : ' . $password . '</br>';
-    user();
-}
+
 ?>

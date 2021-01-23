@@ -28,7 +28,6 @@
     ?>
 
     <p><a href="view/Vieweditchapter.php">Ajouter un chapitre</a></p>
-    <p><a href="view/Viewuser.php">Espace Administration</a></p>
 </body>
 
 </html>
