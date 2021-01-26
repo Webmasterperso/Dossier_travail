@@ -18,7 +18,7 @@
     ?>
 
 
-    <form action="../index.php?action=connection" method="post">
+    <form action="../index.php" method="post">
         <div>
             <label for="user">Identifiant</label><br />
             <input type="text" id="user" name="user" />

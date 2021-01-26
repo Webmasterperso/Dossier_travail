@@ -5,42 +5,6 @@ require_once('model/Modelchapter.php');
 require_once('model/Modelcomment.php');
 require_once('model/Modeluser.php');
 
-function user()
-{
-  $user = htmlspecialchars($_POST['user']);
-  $password = htmlspecialchars($_POST['password']);
-  $modeluser = new Modeluser();
-  $datauser = $modeluser->readoneuser($user, $password);
-  //echo 'tableaux' . $datauser[1];
-
-  if (!empty($datauser[1])) {
-    echo 'user : ' . $user . '</br>';
-    echo 'password : ' . $password . '</br>';
-    echo 'Vous êtes connecté </br>';
-    $_SESSION['user'] = $user;
-    echo 'sessionuser : ' . $_SESSION['user'] . '</br>';
-    
-  } else {
-    echo 'Vous nêtes pas connecté, votre identifiant ou mot de passe est incorrecte...';
-    require('view/Viewuser.php');
-   exit;
-  }
-}
-
-function userout()
-
-{
-  // Démarrage ou restauration de la session
-  //session_start();
-  // Réinitialisation du tableau de session
-  // On le vide intégralement
-  $_SESSION = array();
-  // Destruction de la session
-  session_destroy();
-  // Destruction du tableau de session
-  unset($_SESSION);
-}
-
 function listchapter()
 {
   $modelchapters = new Modelchapter(); // Création d'un objet
@@ -65,7 +29,19 @@ function onechapter()
   require('view/Viewonechapter.php');
 }
 
-
+function user()
+{
+  $modeluser = new Modeluser();
+  $datauser = $modeluser->readoneuser($_POST['user'], $_POST['password']);
+  echo 'tableaux' . $datauser[1];
+  
+  if(!empty($datauser[1])) {
+    require('index.php');
+  }
+  else {
+    require('view/Viewuser.php');
+  }
+}
 
 function modifchapter()
 {
@@ -109,12 +85,6 @@ function addComment()
     } else {
         //header('Location: index.php?id=' . $_GET['id_chapter']);
     }
-}
-
-function suppComment()
-{
-  $modelcomment = new Modelcomment();
-  $deleteLines = $modelcomment->deletecomment($_GET['id']);
 }
 
 function changepubliserComment()

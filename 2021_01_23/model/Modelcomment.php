@@ -14,7 +14,7 @@ class Modelcomment extends Manager
     public function readcommentonechapter($chapterId)
     {
         $db = $this->dbConnect();
-        $commentonechapter = $db->prepare('SELECT id_comment, id_fromchapter, author_comment, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr, text_comment, etat_comment FROM comments WHERE id_fromchapter = ? AND etat_comment = 1');
+        $commentonechapter = $db->prepare('SELECT id_comment, id_fromchapter, author_comment, DATE_FORMAT(date_comment, \'%d/%m/%Y à %Hh%imin%ss\') AS date_comment_fr, text_comment, etat_comment FROM comments WHERE id_fromchapter = ?');
         $commentonechapter->execute(array($chapterId));
         
         return $commentonechapter;
@@ -27,16 +27,6 @@ class Modelcomment extends Manager
         $affectedLines = $comments->execute(array($chapteridcomment, $authorcomment, $textcomment));
 
         return $affectedLines;
-    }
-
-    public function deletecomment($chapteridcomment)
-    {
-        $db = $this->dbConnect();
-        $deletecomments = $db->prepare('DELETE FROM comments WHERE id_comment = ?');
-        $deleteLines = $deletecomments->execute(array($chapteridcomment));
-        return $deleteLines;
-
-        
     }
 
     public function publishedcomment($etatcomment, $idcomment)
