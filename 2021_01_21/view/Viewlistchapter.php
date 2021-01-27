@@ -23,16 +23,11 @@
         echo '<p><strong>' . htmlspecialchars($datachapters['title_chapter']) . '</strong> le ' . $datachapters['date_chapter_fr'] . '</p>';
         echo '<p>' . nl2br(htmlspecialchars($datachapters['text_chapter'])) . '</p>';
         echo '<p><a href="index.php?id_chapter=' . $datachapters['id_chapter'] . '">Détails et Commentaires</a></em>';
-        if (isset($_SESSION['user'])) {
-            echo '<p><a href="index.php?id_chapter=' . $datachapters['id_chapter'] . '&action=modifier">modifier le chapitre</a></p>';
-        }
-    }
-    
-    if (isset($_SESSION['user'])){
-    echo '<p><a href="view/Vieweditchapter.php">Ajouter un chapitre</a></p>';
+        echo '<p><a href="index.php?id_chapter=' . $datachapters['id_chapter'] . '&action=modifier">modifier le chapitre</a></p>';
     }
     ?>
-    <p><a href="view/Viewuser.php">Espace Administration</a></p>
+
+    <p><a href="view/Vieweditchapter.php">Ajouter un chapitre</a></p>
 </body>
 
 </html>

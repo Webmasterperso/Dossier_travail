@@ -51,10 +51,8 @@
                 echo '<td><input type="checkbox" id="published" name="published" disabled="disabled"></td>';
                 echo '<td> <form action="index.php?id=' . $datacomments['id_comment'] . '" method="post">';
                 echo '<input type="hidden" id="public" name="public" value="1" />';
-                echo '<input type="submit" nama="publier" value="Publier"/>';
-                echo '<input type="submit" name="supprimer" value="Supprimer"/></form></td>';
+                echo '<input type="submit" value="Publier"/></form></td>';
             }
-
 
 
             echo '</tr>';
