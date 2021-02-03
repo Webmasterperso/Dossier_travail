@@ -1,14 +1,19 @@
-<!DOCTYPE html>
-<html>
+<section id="page">
 
-<head>
-    <meta charset="utf-8" />
-    <title>Mon blog</title>
-    <link href="style.css" rel="stylesheet" />
-</head>
+    <section id="articles">
+        <article id="biographie">
+            <h3>Votre Guide</h3>
+            <p>
+                Jean Rocheforte est né en 1971 en France dans la région des Landes.
+                Ses parents, commerçants artisans, lui ont donné le goût de l'effort
+                et d'une vie simple.
+            </p>
+        </article>
+    </section>
 
-<body>
-    <h1>Billet simple pour l'Alaska</h1>
+</section>
+
+<section id=listchapter>
 
     <h2>Liste des chapitres</h2>
     <p>En date du
@@ -27,12 +32,11 @@
             echo '<p><a href="index.php?id_chapter=' . $datachapters['id_chapter'] . '&action=modifier">modifier le chapitre</a></p>';
         }
     }
-    
-    if (isset($_SESSION['user'])){
-    echo '<p><a href="view/Vieweditchapter.php">Ajouter un chapitre</a></p>';
+
+    if (isset($_SESSION['user'])) {
+        echo '<p><a href="view/Vieweditchapter.php">Ajouter un chapitre</a></p>';
     }
     ?>
     <p><a href="view/Viewuser.php">Espace Administration</a></p>
-</body>
 
-</html>
+</section>

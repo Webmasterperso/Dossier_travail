@@ -1,5 +1,6 @@
 <?php
 session_start();
+require('view/Viewhtml.php');
 require('controleur/Control.php');
 
 //echo 'publisher = ' . $_POST['public'] . '</br>';
@@ -8,11 +9,11 @@ require('controleur/Control.php');
 
 if (isset($_POST['user']) && isset($_POST['password'])) {
     //echo 'user : ' . $user . ' / passeword : ' . $password . '</br>';
-    echo 'lancement formulaire </br>';
+    //echo 'lancement formulaire </br>';
     user();
 }
 if ($_GET['action'] == 'deconnect') {
-    echo 'Fin de session';
+    //echo 'Fin de session';
 
     userout();
 }
@@ -23,21 +24,21 @@ if (isset($_SESSION['user'])) {
 
 
     if (isset($_POST['textchapter']) && isset($_POST['Enregistrer'])) {
-        echo 'bonjour postnouveauchap';
+        //echo 'bonjour postnouveauchap';
         newchapter();
     } elseif (isset($_POST['textchapter']) && isset($_POST['Modifier'])) {
-        echo 'bonjour postmodifchap';
+        //echo 'bonjour postmodifchap';
 
         savemoditchapter();
     } elseif ($_GET['action'] === 'modifier') {
-        echo 'bonjour affichemodifchap';
+        //echo 'bonjour affichemodifchap';
 
         modifchapter();
     }
 }
 
 if (isset($_GET['id_chapter']) && $_GET['id_chapter'] > 0) {
-    echo 'bonjour get ' . $_GET['id_chapter'];
+    //echo 'bonjour get ' . $_GET['id_chapter'];
     if (!empty($_POST['author']) && !empty($_POST['comment'])) {
         echo 'bonjour post ' . $_GET['id_chapter'];
         addComment();
@@ -47,16 +48,16 @@ if (isset($_GET['id_chapter']) && $_GET['id_chapter'] > 0) {
 } else {
     if (isset($_POST['public'])) {
         if(isset($_POST['supprimer'])) {
-            echo 'bonjour postdeletecomment';
+            //echo 'bonjour postdeletecomment';
             suppComment();
         }
         else {
-            echo 'bonjour postpublishcomment';
+            //echo 'bonjour postpublishcomment';
             changepubliserComment();
         }
         
     }
-    echo 'bonjour index';
+    //echo 'bonjour index';
     listchapter();
     if (isset($_SESSION['user'])) {
     listcomment();

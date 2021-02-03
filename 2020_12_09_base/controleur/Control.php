@@ -14,9 +14,9 @@ function user()
   //echo 'tableaux' . $datauser[1];
 
   if (!empty($datauser[1])) {
-    echo 'user : ' . $user . '</br>';
-    echo 'password : ' . $password . '</br>';
-    echo 'Vous êtes connecté </br>';
+    //echo 'user : ' . $user . '</br>';
+    //echo 'password : ' . $password . '</br>';
+    //echo 'Vous êtes connecté </br>';
     $_SESSION['user'] = $user;
     echo 'sessionuser : ' . $_SESSION['user'] . '</br>';
     

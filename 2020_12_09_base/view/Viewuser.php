@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="utf-8" />
-    <title>Mon blog</title>
-    <link href="style.css" rel="stylesheet" />
-</head>
+<section id='connection'>
 
-<body>
-    <h1>Billet simple pour l'Alaska par chapitre!</h1>
+    <h1>Connection administrateur</h1>
     <?php
     if (isset($_GET['erreur'])) {
         $err = $_GET['erreur'];
@@ -32,11 +25,4 @@
         </div>
     </form>
 
-
-
-
-</body>
-
-</html>
-<?php
-?>
+</section>

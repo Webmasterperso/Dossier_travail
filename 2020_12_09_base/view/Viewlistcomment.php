@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="utf-8" />
-    <title>Mon blog</title>
-    <link href="style.css" rel="stylesheet" />
-</head>
 
-<body>
+<section id='listcomment'>
     <h1>Billet simple pour l'Alaska</h1>
 
     <h2>Liste des commentaires</h2>
@@ -64,6 +57,4 @@
     </table>
 
 
-</body>
-
-</html>
+</section>
