@@ -11,7 +11,7 @@
             </h3>
 
             <p>
-                <?= nl2br(htmlspecialchars($datachapter['text_chapter'])) ?>
+                <?= nl2br(html_entity_decode(htmlspecialchars($datachapter['text_chapter']))) ?>
             </p>
         </div>
     </section>
@@ -52,4 +52,4 @@
 
 </section>
 
-<?= html_entity_decode($post['content']) ?>
+<?php //html_entity_decode($post['content']) ?>

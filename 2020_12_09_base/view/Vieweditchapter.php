@@ -1,5 +1,5 @@
 <section id = 'editchapter'>
-    <h1>Billet simple pour l'Alaska - Nouveau chapitre</h1>
+    <h1>Billet simple pour l'Alaska - gestion des chapitre</h1>
     <form action="../index.php?id_chapter=<?= $_GET['id_chapter'] ?>" method="post">
         <div>
             <label for="titlechapter">Titre du chapitre</label><br />

@@ -13,7 +13,6 @@
     <table>
         <tr>
             <th>Date</th>
-            <th>ID</th>
             <th>Chap</th>
             <th>Pseudo</th>
             <th>Commentaire</th>
@@ -25,7 +24,7 @@
         while ($datacomments = $comments->fetch()) {
             echo '<tr>' .
                 '<td>' . htmlspecialchars($datacomments['date_comment_fr']) . '</td>' .
-                '<td>' . htmlspecialchars($datacomments['id_comment']) . '</td>' .
+                //'<td>' . htmlspecialchars($datacomments['id_comment']) . '</td>' .
                 '<td>' . htmlspecialchars($datacomments['id_fromchapter']) . '</td>' .
                 '<td>' . htmlspecialchars($datacomments['author_comment']) . '</td>' .
                 '<td>' . htmlspecialchars($datacomments['text_comment']) . '</td>';
@@ -35,7 +34,7 @@
                 //echo 'Etat publié : ' . $datacomments['etat_comment'];
 
                 echo '<td><input type="checkbox" id="published" name="published" disabled="disabled" checked></td>';
-                echo '<td> <form action="index.php?id=' . $datacomments['id_comment'] . '" method="post">';
+                //echo '<td> <form action="index.php?id=' . $datacomments['id_comment'] . '" method="post">';
                 echo '<input type="hidden" id="public" name="public" value="2" />';
                 echo '<input type="submit" value="Bloquez" /></form></td>';
             } else {

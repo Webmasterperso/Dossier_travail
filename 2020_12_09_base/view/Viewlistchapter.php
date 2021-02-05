@@ -34,9 +34,9 @@
     }
 
     if (isset($_SESSION['user'])) {
-        echo '<p><a href="view/Vieweditchapter.php">Ajouter un chapitre</a></p>';
+        echo '<p><a href="index.php?action=nouveau">Ajouter un chapitre</a></p>';
     }
     ?>
-    <p><a href="view/Viewuser.php">Espace Administration</a></p>
+    
 
 </section>

@@ -18,12 +18,12 @@ function user()
     //echo 'password : ' . $password . '</br>';
     //echo 'Vous êtes connecté </br>';
     $_SESSION['user'] = $user;
-    echo 'sessionuser : ' . $_SESSION['user'] . '</br>';
+    //echo 'sessionuser : ' . $_SESSION['user'] . '</br>';
     
   } else {
     echo 'Vous nêtes pas connecté, votre identifiant ou mot de passe est incorrecte...';
     require('view/Viewuser.php');
-   exit;
+   
   }
 }
 

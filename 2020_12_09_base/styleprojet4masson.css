@@ -16,11 +16,57 @@ header {
   background-repeat : no-repeat;
   
 }
+
+footer {
+  height: 100px;
+  background-color: rgba(95, 2, 2, 0.8);
+  color: whitesmoke;
+  text-align: center;
+}
+
 nav {
+  
   height: 200px;
   background-color: rgba(95, 2, 2, 0.8);
-  color: transparent;
+  color: whitesmoke;
 }
+
+nav #menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 30%;
+}
+
+nav #titre {
+  margin-left: 30%;
+}
+
+nav #titre h1{
+  display:block;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+nav #titre h2{
+  display:block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+
+
+
+
 
 h1 {
   font-family: 'Libre Baskerville', arial, sans-serif;
@@ -161,10 +207,27 @@ font-size: 2em;
 
 input[type=submit] {
   width:100px;
-  
   border-radius: 10px;
-  box-shadow:0px 0px 20px whitesmoke;
+  box-shadow:5px 5px 10px whitesmoke;
   cursor:pointer;
-
 }
+
+input[type=submit]:active {
+  width:100px;
+  border-radius: 10px;
+  box-shadow:0px 0px 0px whitesmoke;
+  cursor:pointer;
+}
+
+input[type=submit]:hover {
+  width:100px;
+  border-radius: 10px;
+  box-shadow:10px 10px 20px whitesmoke;
+  background-color: rgb(4, 234, 241);
+  color:white;
+  cursor:pointer;
+}
+
+
+
 

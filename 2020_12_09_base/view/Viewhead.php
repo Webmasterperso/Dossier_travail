@@ -24,7 +24,8 @@
   <script src="https://cdn.tiny.cloud/1/qfw6s6sx4pvsntv7t1in07fn2m1jxkuutrinitvom3b8kpfj/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   <script type="text/javascript">
     tinymce.init({
-      selector: "textarea #textchapter",
+      selector: "textarea#textchapter",
+      menubar: 'edit'
     });
   </script>
   <!-- META VIEWPORT permet de controler le zoom et la mise en page sur les navigateur mobile et tablette -->
@@ -35,14 +36,17 @@
   <header>
     <!--logo et menu-->
     <nav>
-      <p>
-        <a href="index.php"><img src="pictures/logonantes.gif" alt="logo" class="logo" /></a>
-      </p>
-      <ul>
-        <li><a href="index.php">Accueil</a></li>
-        <li><a href="#modemploi">Chapitres</a></li>
-        <li><a href="#resa">Auteur</a></li>
-      </ul>
+      <div id="menu">
+        <p>
+          <a href="index.php"><img src="pictures/logonantes.gif" alt="logo" class="logo" /></a>
+        </p>
+        <ul>
+          <li><a href="index.php">Accueil</a></li>
+          <li><a href="#modemploi">Chapitres</a></li>
+          <li><a href="#resa">Auteur</a></li>
+        </ul>
+      </div>
+
       <div id="titre">
         <h1 id="titresite">Blog de Jean Forteroche</h1>
         <h2 id="soustitre">Auteur et Ecrivain</h2>
@@ -64,10 +68,4 @@
 
   </header>
 
-
-  <?php
-  //require('Viewlistchapter.php');
-  ?>
-</body>
-
-</html>
+  <!--section view-->
