@@ -24,8 +24,7 @@
   <script src="https://cdn.tiny.cloud/1/qfw6s6sx4pvsntv7t1in07fn2m1jxkuutrinitvom3b8kpfj/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
   <script type="text/javascript">
     tinymce.init({
-      selector: "textarea#textchapter",
-      menubar: 'edit'
+      selector: "textarea #textchapter",
     });
   </script>
   <!-- META VIEWPORT permet de controler le zoom et la mise en page sur les navigateur mobile et tablette -->
@@ -36,34 +35,22 @@
   <header>
     <!--logo et menu-->
     <nav>
-      <div id="menu">
-        <p>
-          <a href="index.php"><img src="view/media/logo.png" alt="logo" class="logo" /></a>
-        </p>
-        <ul>
-          <li><a href="index.php">Accueil</a></li>
-          <li><a href="#modemploi">Chapitres</a></li>
-          <li><a href="#resa">Auteur</a></li>
-        </ul>
-      </div>
-
+      <p>
+        <a href="index.php"><img src="pictures/logonantes.gif" alt="logo" class="logo" /></a>
+      </p>
+      <ul>
+        <li><a href="index.php">Accueil</a></li>
+        <li><a href="#modemploi">Chapitres</a></li>
+        <li><a href="#resa">Auteur</a></li>
+      </ul>
       <div id="titre">
         <h1 id="titresite">Blog de Jean Forteroche</h1>
-        <?php
-        if (isset($_SESSION['user']))
-        {
-        echo'<h2 id="soustitre">Espace administrateur</h2>';
-        }
-        ?>
+        <h2 id="soustitre">Auteur et Ecrivain</h2>
       </div>
     </nav>
 
-    <?php
-        if (!isset($_SESSION['user']))
-        {
-    ?>
     <section id="fenetre">
-      <h2 id="titrelivre">Billet simple pour l'Alaska</h2>
+      <h1 id="titrelivre">Billet simple pour l'Alaska</h1>
       <article id="concept">
         <h3>Suivez-moi...</h3>
         <p>
@@ -74,7 +61,16 @@
         </p>
       </article>
     </section>
-    <?php } ?>
+
   </header>
 
-  <!--section view-->
+
+  <footer>
+    <p>Mentions légales | © Jean Forteroche - 2021</p>
+    <p><a href="view/Viewuser.php">Espace Administrateur</a></p>
+    <p>Sité réalisé par Denis Masson pour Projet 4 de la formation "Developpeur Web Junion"</p>
+
+  </footer>
+</body>
+
+</html>

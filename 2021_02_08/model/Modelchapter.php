@@ -15,15 +15,7 @@ class Modelchapter extends Manager
     public function readlistchapters()
     {
         $db = $this->dbConnect();
-        $req = $db->query('SELECT id_chapter, title_chapter, author_chapter, DATE_FORMAT(date_chapter, \'%d/%m/%Y\') AS date_chapter_fr FROM chapter ORDER BY id_chapter DESC LIMIT 0, 100');
-
-        return $req;
-    }
-
-    public function readlistchapterspubli()
-    {
-        $db = $this->dbConnect();
-        $req = $db->query('SELECT id_chapter, title_chapter, author_chapter, DATE_FORMAT(date_chapter, \'%d/%m/%Y\') AS date_chapter_fr,publication_chapter FROM chapter WHERE publication_chapter="2" ORDER BY id_chapter DESC LIMIT 0, 100');
+        $req = $db->query('SELECT id_chapter, title_chapter, author_chapter, DATE_FORMAT(date_chapter, \'%d/%m/%Y\') AS date_chapter_fr FROM chapter ORDER BY id_chapter DESC LIMIT 0, 10');
 
         return $req;
     }
@@ -41,7 +33,7 @@ class Modelchapter extends Manager
     public function savenewchapter($chaptertitle, $chaptertext)
     {
         $db = $this->dbConnect();
-        $chapter = $db->prepare('INSERT INTO chapter(title_chapter, author_chapter, text_chapter, date_chapter, publication_chapter) VALUES(?, "Jean Forteroche", ?, NOW(),"1")');
+        $chapter = $db->prepare('INSERT INTO chapter(title_chapter, author_chapter, text_chapter, date_chapter) VALUES(?, "Denis Masson", ?, NOW())');
         $affectedLinesnewchapter = $chapter->execute(array($chaptertitle, $chaptertext));
         
         return $affectedLinesnewchapter;

@@ -266,44 +266,12 @@ input[type=submit]:active {
 
 input[type=submit]:hover {
   width:100px;
-  border-radius: 5px;
-  box-shadow:10px 10px 10px whitesmoke;
-  background-color: rgb(241, 90, 90);
+  border-radius: 10px;
+  box-shadow:10px 10px 20px whitesmoke;
+  background-color: rgb(4, 234, 241);
   color:white;
   cursor:pointer;
 }
-
-input[type=checkbox] {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  border-radius: 3px;
-  height: 15px;
-  width: 15px;
-  border:1px solid gray;
-  
-
-}
-
-input[type=checkbox]:checked {
-  background-color: greenyellow;
-
-}
-
-
-table tr {
-  background-color: rgb(202, 199, 199);
-
-}
-
-table tr td {
-  padding: 5px
-}
-
-table tr #chap, table tr #publi, form {
-  text-align:center;
-}
-
 
 
 
