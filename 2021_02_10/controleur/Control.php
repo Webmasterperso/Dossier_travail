@@ -5,64 +5,35 @@ require_once('model/Modelchapter.php');
 require_once('model/Modelcomment.php');
 require_once('model/Modeluser.php');
 
-function usermodif()
-{
-  // Hachage du mot de passe
-  if(isset($_POST['password']) && isset($_POST['user']))
-  {
-    $pass_hache = password_hash($_POST['password'], PASSWORD_DEFAULT);
-    $user = $_POST['user'];
-   
-    $iduser = $_SESSION['iduser'];
-  
-    //$iduser = '2';
-    $modeluser = new Modeluser();
-    $affectedLinesuser = $modeluser->modifuser($user, $pass_hache, $iduser);
-  }
-  else
-  {
-    Echo'Un identifiant et un mot de passe sont obligatoires, aucun changement n\'a été effectué';
-  }
-  
-}
-
-
 function user()
 {
-  
   $user = htmlspecialchars($_POST['user']);
-  //Comparaison du pass envoyé via le formulaire avec la base
-  $mdp = $_POST['password'];
-
+  $password = htmlspecialchars($_POST['password']);
   $modeluser = new Modeluser();
-  $datauser = $modeluser->readoneuser($user);
-  //Comparaison du pass envoyé via le formulaire avec la base
-  $isPasswordCorrect = password_verify($mdp, $datauser['password_user']);
-  echo 'user : ' . $user . ' - MdPin : ' . $mdp . ' - MdP base : ' . $datauser["password_user"] . '</br>' ;
-  echo ' - comparaison MdP : ' . password_verify($mdp, $datauser['password_user']) . '</br>';
+  $datauser = $modeluser->readoneuser($user, $password);
+  //echo 'tableaux' . $datauser[1];
 
-  if (!$datauser) {
-    echo 'Mauvais identifiant , vous ne pouvez pas vous connecter !';
-    echo 'comparaison MdP : '. $isPasswordCorrect;
-    require('view/Viewuser.php');
+  if (!empty($datauser[1])) {
+    //echo 'user : ' . $user . '</br>';
+    //echo 'password : ' . $password . '</br>';
+    //echo 'Vous êtes connecté </br>';
+    $_SESSION['user'] = $user;
+    //echo 'sessionuser : ' . $_SESSION['user'] . '</br>';
+    
   } else {
-    if ($isPasswordCorrect) {
-      $_SESSION['user'] = $user;
-      $_SESSION['iduser'] = $datauser['id_user'];
-        
-    } else {
-      echo 'Vous nêtes pas connecté, votre mot de passe est incorrecte...';
-      echo ' - comparaison MdP : ' . $isPasswordCorrect;
-      require('view/Viewuser.php');
-    }
+    echo 'Vous nêtes pas connecté, votre identifiant ou mot de passe est incorrecte...';
+    require('view/Viewuser.php');
+   
   }
 }
-
 
 function userout()
 
 {
-
+  // Démarrage ou restauration de la session
+  //session_start();
+  // Réinitialisation du tableau de session
+  // On le vide intégralement
   $_SESSION = array();
   // Destruction de la session
   session_destroy();
@@ -91,8 +62,8 @@ function listchapterpubli()
 
 function listcomment()
 {
-  $modelcomments = new Modelcomment();
-  $comments = $modelcomments->readlistcomments();
+$modelcomments = new Modelcomment();
+$comments = $modelcomments->readlistcomments();
   require('view/Viewlistcomment.php');
 }
 
@@ -108,11 +79,11 @@ function onechapter()
 function modifchapter()
 {
   $modelchapter = new Modelchapter();
-
+  
   $datachapter = $modelchapter->readonechapter($_GET['id_chapter']);
   //$datachapter = $modelchapter->publicationchapter($_GET['id_chapter']);
 
-
+  
   require('view/Vieweditchapter.php');
 }
 
@@ -130,8 +101,7 @@ function savepublichapter()
 
 
 
-function newchapter()
-{
+function newchapter(){
   $modelnewchapter = new Modelchapter();
   $affectedLinesnewchapter = $modelnewchapter->savenewchapter($_POST['titlechapter'], $_POST['textchapter']);
 
@@ -145,15 +115,15 @@ function newchapter()
 
 function addComment()
 {
-  $modelcomment = new Modelcomment();
+   $modelcomment = new Modelcomment();
 
-  $affectedLines = $modelcomment->savecomment($_GET['id_chapter'], $_POST['author'], $_POST['textcomment']);
+    $affectedLines = $modelcomment->savecomment($_GET['id_chapter'],$_POST['author'], $_POST['textcomment']);
 
-  if ($affectedLines === false) {
-    throw new Exception('Impossible d\'ajouter le commentaire !');
-  } else {
-    //header('Location: index.php?id=' . $_GET['id_chapter']);
-  }
+    if ($affectedLines === false) {
+        throw new Exception('Impossible d\'ajouter le commentaire !');
+    } else {
+        //header('Location: index.php?id=' . $_GET['id_chapter']);
+    }
 }
 
 function suppComment()
@@ -165,11 +135,11 @@ function suppComment()
 function changepubliserComment()
 {
   $modelcomment = new Modelcomment();
-
+  
   if (isset($_POST['public'])) {
     $publish = $_POST['public'];
   }
-
+    
   $updateLines = $modelcomment->publishedcomment($publish, $_GET['id']);
 
   if ($updateLines === false) {

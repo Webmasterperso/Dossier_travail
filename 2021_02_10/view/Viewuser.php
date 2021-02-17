@@ -13,7 +13,7 @@
             <input type="password" name="password"></textarea>
         </div>
         <div>
-            <input type="submit" id="submit" name="send" value="Connexion" />
+            <input type="submit" id="submit" value="Connexion" />
         </div>
     </form>
 

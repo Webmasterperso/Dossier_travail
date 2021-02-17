@@ -1,4 +1,11 @@
+<?php
 
+//$db=mysql_connect("votredomaine.com.mysql", "nom d'utilisateur", "mot de passe");
+//mysql_select_db("base de données", $db);
+
+//$db = mysql_connect('webmasterperso.fr.mysql', 'webmasterperso_', 'webmaster2579');
+//mysql_select_db('webmasterperso_',$db);
+?>
 
 <?php
 require_once("model/Manager.php");
