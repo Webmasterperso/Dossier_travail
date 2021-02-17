@@ -24,7 +24,7 @@
            ?>
             <div class="onecomment">
                 <p><strong><?= htmlspecialchars($datacomments['author_comment']); ?> </strong> le <?= $datacomments['date_comment_fr'] ?></p>
-                <p><?= nl2br(html_entity_decode(htmlspecialchars($datacomments['text_comment']))); ?> </p>
+                <p><?= nl2br(html_entity_decode(htmlspecialchars($datacomments['text_comment']))); ?> :) </p>
             </div>
             <? }
             ?>

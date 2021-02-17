@@ -1,0 +1,310 @@
+body {
+  font-family: 'Montserrat', arial, sans-serif;
+  max-width: 1600px;
+  margin: 0 auto;
+  
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /**height: 600px;**/
+  background-size: 100%;
+  background-image: url(http://webmasterperso.fr/projet4masson/view/media/fond.jpg);
+  background-attachment:fixed;
+  background-repeat : no-repeat;
+  
+}
+
+footer {
+  height: 100px;
+  background-color: rgba(241, 90, 90, 0.8);
+  color: whitesmoke;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Libre Baskerville', arial, sans-serif;
+  font-size: 3em;
+  color:white;
+  text-shadow: 4px 4px 6px rgb(4, 234, 241);
+}
+
+h2 {
+  font-family: 'Libre Baskerville', arial, sans-serif;
+  color:rgb(6, 5, 85);
+  font-size: 2em;
+  
+}
+a {
+  font-size : 1em;
+  color: grey;
+  text-shadow: 2px 2px 3px grey;
+  text-decoration: none;
+}
+
+a:hover {
+  text-shadow: 4px 4px 6px grey;
+}
+
+a:active {
+  text-shadow: unset;
+}
+
+nav {
+  
+  height: 200px;
+  background-image: url(http://webmasterperso.fr/projet4masson/view/media/ecran.png);
+  background-color: rgba(241, 90, 90, 0.8);
+  background-attachment:scroll;
+  background-repeat : no-repeat;
+  background-size: cover;
+  background-size:  25% 90%;
+  background-position: 85% 10px;
+  color: whitesmoke;
+}
+
+nav #menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+  
+}
+
+nav #menu ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 30%;
+}
+
+nav #menu ul a {
+  display: block;
+  padding-top: 10px;
+  border-top: 3px solid transparent;
+  font-size : 1em;
+  color: white;
+  text-shadow: 2px 2px 3px grey;
+  text-decoration: none;
+}
+
+nav #menu ul a:hover{
+  font-weight: bold;
+  color: white;
+  text-shadow: 4px 4px 6px grey;
+  border-top: 3px solid white;
+  
+}
+
+
+
+nav #titre {
+  margin-left: 50%;
+}
+
+nav #titre h1{
+  display:block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+}
+
+nav #titre h2{
+  display:block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+#fenetre {
+  height: 300px;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+
+#fenetre h2 {
+  margin-left: 45px;
+  font-size: 3em;
+  background-color: transparent;
+  text-shadow: 4px 4px 6px rgb(4, 234, 241);
+  text-align: right;
+}
+
+#articles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+article {
+  width: 40%;
+  background-color: whitesmoke;
+  font-family: 'Montserrat', arial, sans-serif;
+  font-size : 1em;
+  color:rgb(70, 69, 69);
+  text-align:justify;
+  padding: 2%;
+  border-radius: 30px;
+}
+
+article p::first-letter {
+  float: left;
+  font-size: 2em;
+  color:rgb(241, 90, 90);
+}
+
+article h3 {
+font-size: 2em;
+}
+
+#connection {
+  width: 40%;
+  height: 40%;
+  margin: 10px auto;
+  padding: 20px;
+  text-align:center;
+  background-color: whitesmoke;
+  border-radius: 30px;
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+#connection form {
+  padding:10px;
+}
+#connection form div {
+  padding:10px;
+}
+
+
+
+
+#onechapter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin : 10px 0px 10px 0px;
+}
+
+#chapter {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  padding: 10px;
+  background-color: whitesmoke;
+  color:rgb(6, 5, 85);
+  border-radius: 0px 30px 30px 0px;
+  text-align:justify;
+}
+
+#chapter h1{
+  margin: 10px 0px 10px 0px;
+  text-align: center;
+}
+
+#comments {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  padding: 10px;
+  border-radius: 30px 0px 0px 30px;
+  background-color: grey;
+  color:whitesmoke;
+}
+
+#comments h2 {
+  display: block;
+  border-bottom: 4px solid whitesmoke;
+  
+}
+
+.onecomment {
+  padding: 10px;
+  border-bottom: 2px  solid rgba(241, 90, 90, 0.8);
+}
+
+.onechap {
+  padding: 5px;
+  border-bottom: 2px  solid rgba(241, 90, 90, 0.8);
+}
+
+
+#newcomments {
+  background-color: rgba(241, 90, 90, 0.8);
+  padding : 10px;
+  text-align: center;
+  border-radius: 0px 0px 0px 30px;
+}
+
+#textcomment {
+  width: 300px;
+  height: 110px;
+}
+
+input[type=submit] {
+  width:100px;
+  border-radius: 10px;
+  box-shadow:5px 5px 10px whitesmoke;
+  cursor:pointer;
+}
+
+input[type=submit]:active {
+  width:100px;
+  border-radius: 10px;
+  box-shadow:0px 0px 0px whitesmoke;
+  cursor:pointer;
+}
+
+input[type=submit]:hover {
+  width:100px;
+  border-radius: 5px;
+  box-shadow:10px 10px 10px whitesmoke;
+  background-color: rgb(241, 90, 90);
+  color:white;
+  cursor:pointer;
+}
+
+input[type=checkbox] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  border-radius: 3px;
+  height: 15px;
+  width: 15px;
+  border:1px solid gray;
+  
+
+}
+
+input[type=checkbox]:checked {
+  background-color: greenyellow;
+
+}
+
+
+table tr {
+  background-color: rgb(202, 199, 199);
+
+}
+
+table tr td {
+  padding: 5px
+}
+
+table tr #chap, table tr #publi, form {
+  text-align:center;
+}
+
+
+
+
+

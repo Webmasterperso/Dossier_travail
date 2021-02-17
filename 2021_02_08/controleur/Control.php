@@ -41,7 +41,6 @@ function userout()
   unset($_SESSION);
 }
 
-
 function listchapter()
 {
   $modelchapters = new Modelchapter(); // Création d'un objet
@@ -49,16 +48,6 @@ function listchapter()
 
   require('view/Viewlistchapter.php');
 }
-
-function listchapterpubli()
-{
-  $modelchapters = new Modelchapter(); // Création d'un objet
-  $chapters = $modelchapters->readlistchapterspubli(); // Appel d'une fonction de cet objet
-
-  require('view/Viewlistchapter.php');
-}
-
-
 
 function listcomment()
 {
@@ -113,7 +102,7 @@ function addComment()
 {
    $modelcomment = new Modelcomment();
 
-    $affectedLines = $modelcomment->savecomment($_GET['id_chapter'],$_POST['author'], $_POST['textcomment']);
+    $affectedLines = $modelcomment->savecomment($_GET['id_chapter'],$_POST['author'], $_POST['comment']);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');

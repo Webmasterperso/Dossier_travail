@@ -7,15 +7,14 @@ require('controleur/Control.php');
 //echo 'chatper = ' . $_GET['id_chapter'] . ' / ' . $_POST['titlechapter'] . ' / ' . $_POST['textchapter'] . ' - ' . $_POST['Enregistrer'] .'</br>';
 
 
-if ($_GET['action'] == 'connection' OR $_GET['action'] == 'identification') {
+if ($_GET['action'] == 'connection') {
     if (isset($_POST['user']) && isset($_POST['password'])) {
-        //echo 'user : ' . $user . ' / passeword : ' . $password . '</br>';
-        //echo 'lancement formulaire </br>';
-        
+    //echo 'user : ' . $user . ' / passeword : ' . $password . '</br>';
+    //echo 'lancement formulaire </br>';
         user();
     }
     else {
-        
+       
         require('view/Viewuser.php');
     }
 }
@@ -24,7 +23,6 @@ if ($_GET['action'] == 'deconnect') {
     //echo 'Fin de session';
 
     userout();
-   
 }
 
 
@@ -53,16 +51,14 @@ if (isset($_SESSION['user'])) {
     }
 }
 
-if (isset($_GET['id_chapter']) && $_GET['id_chapter'] > 0)
-{
-    echo 'bonjour get ' . $_GET['id_chapter'];
-    if (!empty($_POST['author']) && !empty($_POST['textcomment'])) {
+if (isset($_GET['id_chapter']) && $_GET['id_chapter'] > 0) {
+    //echo 'bonjour get ' . $_GET['id_chapter'];
+    if (!empty($_POST['author']) && !empty($_POST['comment'])) {
         echo 'bonjour post ' . $_GET['id_chapter'];
         addComment();
     }
     onechapter();
-}
-else {
+} else {
     if (isset($_POST['public'])) {
         if (isset($_POST['supprimer'])) {
             //echo 'bonjour postdeletecomment';
@@ -73,15 +69,10 @@ else {
             changepubliserComment();
         }
     }
-    if($_GET['action'] <> 'nouveau' && $_GET['action'] <> 'connection'&& $_GET['action'] <> 'identification')
-    {
-    
+    if($_GET['action'] <> 'nouveau' && $_GET['action'] <> 'connection') {
+    listchapter();
         if (isset($_SESSION['user'])) {
-        listchapter();
         listcomment();
-        }
-        else {
-            listchapterpubli();
         }
     }
 }

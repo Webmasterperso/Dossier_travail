@@ -3,43 +3,6 @@
 // Chargement des classes
 require_once('model/Modelchapter.php');
 require_once('model/Modelcomment.php');
-require_once('model/Modeluser.php');
-
-function user()
-{
-  $user = htmlspecialchars($_POST['user']);
-  $password = htmlspecialchars($_POST['password']);
-  $modeluser = new Modeluser();
-  $datauser = $modeluser->readoneuser($user, $password);
-  //echo 'tableaux' . $datauser[1];
-
-  if (!empty($datauser[1])) {
-    //echo 'user : ' . $user . '</br>';
-    //echo 'password : ' . $password . '</br>';
-    //echo 'Vous êtes connecté </br>';
-    $_SESSION['user'] = $user;
-    //echo 'sessionuser : ' . $_SESSION['user'] . '</br>';
-    
-  } else {
-    echo 'Vous nêtes pas connecté, votre identifiant ou mot de passe est incorrecte...';
-    require('view/Viewuser.php');
-   
-  }
-}
-
-function userout()
-
-{
-  // Démarrage ou restauration de la session
-  //session_start();
-  // Réinitialisation du tableau de session
-  // On le vide intégralement
-  $_SESSION = array();
-  // Destruction de la session
-  session_destroy();
-  // Destruction du tableau de session
-  unset($_SESSION);
-}
 
 
 function listchapter()
@@ -49,16 +12,6 @@ function listchapter()
 
   require('view/Viewlistchapter.php');
 }
-
-function listchapterpubli()
-{
-  $modelchapters = new Modelchapter(); // Création d'un objet
-  $chapters = $modelchapters->readlistchapterspubli(); // Appel d'une fonction de cet objet
-
-  require('view/Viewlistchapter.php');
-}
-
-
 
 function listcomment()
 {
@@ -75,8 +28,6 @@ function onechapter()
   $commentonechapter = $modelcomment->readcommentonechapter($_GET['id_chapter']);
   require('view/Viewonechapter.php');
 }
-
-
 
 function modifchapter()
 {
@@ -113,19 +64,13 @@ function addComment()
 {
    $modelcomment = new Modelcomment();
 
-    $affectedLines = $modelcomment->savecomment($_GET['id_chapter'],$_POST['author'], $_POST['textcomment']);
+    $affectedLines = $modelcomment->savecomment($_GET['id_chapter'],$_POST['author'], $_POST['comment']);
 
     if ($affectedLines === false) {
         throw new Exception('Impossible d\'ajouter le commentaire !');
     } else {
         //header('Location: index.php?id=' . $_GET['id_chapter']);
     }
-}
-
-function suppComment()
-{
-  $modelcomment = new Modelcomment();
-  $deleteLines = $modelcomment->deletecomment($_GET['id']);
 }
 
 function changepubliserComment()
