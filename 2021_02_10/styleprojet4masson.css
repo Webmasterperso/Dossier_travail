@@ -125,10 +125,6 @@ nav #titre h2{
   text-align: center;
 }
 
-nav #titreadmin {
-  display:block;
-}
-
 #fenetre {
   height: 300px;
   background-color: transparent;
