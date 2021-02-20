@@ -42,36 +42,38 @@
         </p>
         <ul>
           <li><a href="index.php">Accueil</a></li>
-          <li><a href="#listchapter">Chapitres</a></li>
-          <li><a href="#biographie">Auteur</a></li>
+          <li><a href="#modemploi">Chapitres</a></li>
+          <li><a href="#resa">Auteur</a></li>
         </ul>
       </div>
 
       <div id="titre">
         <h1 id="titresite">Blog de Jean Forteroche</h1>
         <?php
-        if (isset($_SESSION['user'])) {
-          echo '<h2 id="soustitre">Espace administrateur</h2>';
+        if (isset($_SESSION['user']))
+        {
+        echo'<h2 id="soustitre">Espace administrateur</h2>';
         }
         ?>
       </div>
     </nav>
 
     <?php
-    if (!isset($_SESSION['user'])) {
+        if (!isset($_SESSION['user']))
+        {
     ?>
-      <section id="fenetre">
-        <h2 id="titrelivre">Billet simple pour l'Alaska</h2>
-        <article id="concept">
-          <h3>Suivez-moi...</h3>
-          <p>
-            Je vous invite à partir à l'aventure numérique de mon nouveau roman.
-            Chapitre après chapitre, mois après mois, l'attente sera pour vous
-            l'occasion de digérer chaque étape et d'imaginer la suite... avant
-            d'être surpris... </br> Auriez-vous pris cette route.... sans doute non ! mais laissez-vous porter jusqu'à la fin...
-          </p>
-        </article>
-      </section>
+    <section id="fenetre">
+      <h2 id="titrelivre">Billet simple pour l'Alaska</h2>
+      <article id="concept">
+        <h3>Suivez-moi...</h3>
+        <p>
+          Je vous invite à partir à l'aventure numérique de mon nouveau roman.
+          Chapitre après chapitre, mois après mois, l'attente sera pour vous
+          l'occasion de digérer chaque étape et d'imaginer la suite... avant
+          d'être surpris... </br> Auriez-vous pris cette route.... sans doute non ! mais laissez-vous porter jusqu'à la fin...
+        </p>
+      </article>
+    </section>
     <?php } ?>
   </header>
 

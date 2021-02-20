@@ -18,7 +18,6 @@ function usermodif()
     //$iduser = '2';
     $modeluser = new Modeluser();
     $affectedLinesuser = $modeluser->modifuser($user, $pass_hache, $iduser);
-    $_SESSION['user'] = $user;
   }
   else
   {
@@ -163,7 +162,7 @@ function suppComment()
   $deleteLines = $modelcomment->deletecomment($_GET['id']);
 }
 
-function changepublierComment()
+function changepubliserComment()
 {
   $modelcomment = new Modelcomment();
 
@@ -171,7 +170,7 @@ function changepublierComment()
     $publish = $_POST['public'];
   }
 
-  $updateLines = $modelcomment->publishedcomment($publish, $_GET['idcomment']);
+  $updateLines = $modelcomment->publishedcomment($publish, $_GET['id']);
 
   if ($updateLines === false) {
     throw new Exception('Impossible de changer la publication du commentaire !');

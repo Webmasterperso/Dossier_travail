@@ -69,8 +69,7 @@ if (isset($_SESSION['user'])) {
 
 }
 
-            //echo 'bonjour postdeletecomment';
-if (isset($_GET['id_chapter']) && $_GET['id_chapter'] > 0 && !isset($_POST['public']) )
+if (isset($_GET['id_chapter']) && $_GET['id_chapter'] > 0)
 {
     echo 'bonjour get ' . $_GET['id_chapter'];
     if (!empty($_POST['author']) && !empty($_POST['textcomment'])) {
@@ -81,17 +80,13 @@ if (isset($_GET['id_chapter']) && $_GET['id_chapter'] > 0 && !isset($_POST['publ
 }
 else {
     if (isset($_POST['public'])) {
-        echo 'Postpublic ok et = ' . $_POST['public']. '</br>';
-        echo 'Postsignaler = ' . $_POST['Signaler'];
         if (isset($_POST['supprimer'])) {
             //echo 'bonjour postdeletecomment';
             suppComment();
         }
-        //elseif ($_POST['public']=3) 
-        else{
+        else {
             //echo 'bonjour postpublishcomment';
-            echo 'postsignaler : ' . $_POST['Signaler'];
-            changepublierComment();
+            changepubliserComment();
         }
     }
     if($_GET['action'] <> 'nouveau' && $_GET['action'] <> 'connection'&& $_GET['action'] <> 'identification')
@@ -101,12 +96,7 @@ else {
         listchapter();
         listcomment();
         }
-        elseif(isset($_POST['public'])) {
-            onechapter();
-        }
-
         else {
-            echo'listchapterpubli';
             listchapterpubli();
         }
     }

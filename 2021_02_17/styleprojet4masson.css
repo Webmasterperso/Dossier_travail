@@ -107,7 +107,7 @@ nav #menu ul a:hover{
 
 
 
-nav #titre, #titreadmin{
+nav #titre {
   margin-left: 50%;
 }
 
@@ -147,10 +147,15 @@ nav #titreadmin {
   text-align: right;
 }
 
-
+#articles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 20px;
+}
 
 article {
-  
+  width: 40%;
   background-color: whitesmoke;
   font-family: 'Montserrat', arial, sans-serif;
   font-size : 1em;
@@ -158,36 +163,6 @@ article {
   text-align:justify;
   padding: 2%;
   border-radius: 30px;
-}
-
-#concept {
-  width: 40%;
-}
-
-#biographie {
-  width: 90%;
-  margin:auto;
-}
-
-#textbio {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  
-}
-
-#text {
-  width: 60%;
-  flex-wrap: wrap;
-}
-
-#illustration{
-  width: 30%;
-}
-
-article #photo{
-  width : 90%;
-  
 }
 
 article p::first-letter {
@@ -199,8 +174,6 @@ article p::first-letter {
 article h3 {
 font-size: 2em;
 }
-
-
 
 #connection {
   width: 40%;
@@ -327,8 +300,6 @@ input[type=checkbox]:checked {
 }
 
 
-
-
 table tr {
   background-color: rgb(202, 199, 199);
 
@@ -340,11 +311,6 @@ table tr td {
 
 table tr #chap, table tr #publi, form {
   text-align:center;
-}
-
-table tr #publi{
-  color:red;
-  font-weight: bold;
 }
 
 

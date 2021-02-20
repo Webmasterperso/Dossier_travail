@@ -25,12 +25,6 @@
             <div class="onecomment">
                 <p><strong><?= htmlspecialchars($datacomments['author_comment']); ?> </strong> le <?= $datacomments['date_comment_fr'] ?></p>
                 <p><?= nl2br(html_entity_decode(htmlspecialchars($datacomments['text_comment']))); ?> </p>
-                <p><?php
-                    echo '<form action="index.php?idcomment=' . $datacomments['id_comment'] . '&id_chapter=' . $datacomments['id_fromchapter'] . '" method="post">';?>
-                        <input type="hidden" id="public" name="public" value="3" />
-                        <input type="submit" id="signaler" nama="signaler" value="Signaler" />
-                    </form>
-                </p>
             </div>
             <? }
             ?>
@@ -58,5 +52,4 @@
 
 </section>
 
-<?php //html_entity_decode($post['content']) 
-?>
+<?php //html_entity_decode($post['content']) ?>
