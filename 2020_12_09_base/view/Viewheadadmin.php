@@ -57,8 +57,3 @@
         </nav>
 
     </header>
-
-    <!--section view-->
-
-    <!--echo '<p>Bonjour ' . $_SESSION['user'] . ' - ';
-        echo '<a href="index.php?action=deconnect">Deconnexion</a></p>';-->

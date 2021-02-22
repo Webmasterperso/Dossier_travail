@@ -1,4 +1,4 @@
-<section id = 'editchapter'>
+<section id='editchapter'>
     <h2>Billet simple pour l'Alaska - gestion des chapitre</h2>
     <form action="index.php?id_chapter=<?= $_GET['id_chapter'] ?>" method="post">
         <div>
@@ -18,8 +18,7 @@
                 echo '<input type="submit" name="Enregistrer" value="enregistrer" />';
             }
             ?>
-            
+
         </div>
     </form>
 </section>
-
