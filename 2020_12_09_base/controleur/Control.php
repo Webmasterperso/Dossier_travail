@@ -61,7 +61,6 @@ function user()
 
 
 function userout()
-
 {
 
   $_SESSION = array();
@@ -137,7 +136,6 @@ function newchapter()
     //header('Location: index.php');
     require('view/Vieweditchapter.php');
   }
-  
 }
 
 function addComment()
@@ -159,5 +157,4 @@ function changepublierComment()
     $publish = $_POST['public'];
   }
   $updateLines = $modelcomment->publishedcomment($publish, $_GET['idcomment']);
-
 }
