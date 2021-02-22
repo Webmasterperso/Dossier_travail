@@ -31,11 +31,11 @@ class Modelchapter extends Manager
         return $datachapter;
     }
 
-    public function savenewchapter($chaptertitle, $chaptertext)
+    public function savenewchapter($chaptertitle, $chapterauthor, $chaptertext)
     {
         $db = $this->dbConnect();
-        $chapter = $db->prepare('INSERT INTO chapter(title_chapter, author_chapter, text_chapter, date_chapter, publication_chapter) VALUES(?, "Jean Forteroche", ?, NOW(),"1")');
-        $affectedLinesnewchapter = $chapter->execute(array($chaptertitle, $chaptertext));
+        $chapter = $db->prepare('INSERT INTO chapter(title_chapter, author_chapter, text_chapter, date_chapter, publication_chapter) VALUES(?, ?, ?, NOW(),"1")');
+        $affectedLinesnewchapter = $chapter->execute(array($chaptertitle, $chapterauthor, $chaptertext));
         
         return $affectedLinesnewchapter;
 

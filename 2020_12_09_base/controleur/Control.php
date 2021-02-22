@@ -109,11 +109,7 @@ function onechapter()
 function modifchapter()
 {
   $modelchapter = new Modelchapter();
-
   $datachapter = $modelchapter->readonechapter($_GET['id_chapter']);
-  //$datachapter = $modelchapter->publicationchapter($_GET['id_chapter']);
-
-
   require('view/Vieweditchapter.php');
 }
 
@@ -129,32 +125,25 @@ function savepublichapter()
   $datachapter = $modelchapter->publicationchapter($_POST['titlechapter'], $_POST['textchapter'], $_GET['id_chapter']);
 }
 
-
-
 function newchapter()
 {
+  $chapterauthor = $_SESSION['user'];
   $modelnewchapter = new Modelchapter();
-  $affectedLinesnewchapter = $modelnewchapter->savenewchapter($_POST['titlechapter'], $_POST['textchapter']);
+  $affectedLinesnewchapter = $modelnewchapter->savenewchapter($_POST['titlechapter'], $chapterauthor, $_POST['textchapter']);
 
   if ($affectedLinesnewchapter === false) {
     throw new Exception('Impossible d\'ajouter un nouveau chapitre !');
   } else {
-    //header('Location: index.php?id=' . $_GET['id_chapter']);
+    //header('Location: index.php');
+    require('view/Vieweditchapter.php');
   }
-  require('view/Vieweditchapter.php');
+  
 }
 
 function addComment()
 {
   $modelcomment = new Modelcomment();
-
   $affectedLines = $modelcomment->savecomment($_GET['id_chapter'], $_POST['author'], $_POST['textcomment']);
-
-  if ($affectedLines === false) {
-    throw new Exception('Impossible d\'ajouter le commentaire !');
-  } else {
-    //header('Location: index.php?id=' . $_GET['id_chapter']);
-  }
 }
 
 function suppComment()
@@ -166,16 +155,9 @@ function suppComment()
 function changepublierComment()
 {
   $modelcomment = new Modelcomment();
-
   if (isset($_POST['public'])) {
     $publish = $_POST['public'];
   }
-
   $updateLines = $modelcomment->publishedcomment($publish, $_GET['idcomment']);
 
-  if ($updateLines === false) {
-    throw new Exception('Impossible de changer la publication du commentaire !');
-  } else {
-    //header('Location: index.php?id=' . $_GET['id_chapter']);
-  }
 }

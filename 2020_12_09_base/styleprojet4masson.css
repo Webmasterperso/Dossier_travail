@@ -18,10 +18,15 @@ header {
 }
 
 footer {
-  height: 100px;
+  
   background-color: rgba(241, 90, 90, 0.8);
   color: whitesmoke;
   text-align: center;
+}
+
+footer .footer {
+font-size: 1em;
+
 }
 
 h1 {
@@ -164,8 +169,13 @@ article {
   width: 40%;
 }
 
-#biographie {
+#biographie{
   width: 90%;
+  margin:auto;
+}
+
+#listchapter{
+  width: 97%;
   margin:auto;
 }
 
@@ -282,7 +292,7 @@ font-size: 2em;
 }
 
 #textcomment {
-  width: 300px;
+  width: 80%;
   height: 110px;
 }
 
@@ -351,3 +361,265 @@ table tr #publi{
 
 
 
+
+
+/**------------------------------------------responsive tablette-------------------------------------------------**/
+
+@media screen and (max-width: 1024px) {
+  body {
+  font-family: 'Montserrat', arial, sans-serif;
+  max-width: 1024px;
+  margin: 0 auto;
+  
+}
+
+nav #menu ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30%;
+}
+
+nav #menu p img {
+  width: 80%;
+}
+
+nav #menu ul a:hover{
+  font-weight: bold;
+  color: white;
+  text-shadow: 4px 4px 6px grey;
+  border-top:unset;
+  
+}
+
+h1 {
+  
+  font-size: 2em;
+  color:white;
+  text-shadow: 4px 4px 6px rgb(4, 234, 241);
+}
+
+h2 {
+  
+  color:rgb(6, 5, 85);
+  font-size: 1.5em;
+  
+}
+
+article h3 {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  font: size 1.5em;
+}
+
+nav #titre, #titreadmin{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+nav #titre h1{
+  display:block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  margin-right : 20px;
+  text-align:center;
+}
+
+nav #titre h2{
+  display:block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+nav #titreadmin {
+  display:block;
+}
+
+#fenetre {
+  height: auto;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+
+
+#concept {
+  width: 60%;
+}
+
+#fenetre h2 {
+  width: 50%;
+  margin-left: 10px;
+  font-size: 2.1em;
+  text-align: right;
+}
+
+}
+
+
+
+
+/**------------------------------------------responsive telephone-------------------------------------------------**/
+
+@media screen and (max-width: 650px) {
+  body {
+  font-family: 'Montserrat', arial, sans-serif;
+  max-width: 650px;
+  margin: 0 auto;
+  
+}
+
+nav {
+  height: 150px;
+}
+
+nav #menu ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 25%;
+}
+
+nav #menu ul a,#bonjour {
+  display: block;
+  padding-top: 10px;
+  border-top: 2px solid transparent;
+  font-size : 0.8em;
+  color: white;
+  text-shadow: 2px 2px 3px grey;
+  text-decoration: none;
+}
+
+nav #menu p img {
+  width: 100%;
+}
+
+nav #menu ul a:hover{
+  font-weight: bold;
+  color: white;
+  text-shadow: 4px 4px 6px grey;
+  border-top:unset;
+  
+}
+
+h1 {
+  
+  font-size: 1em;
+  color:white;
+  text-shadow: 4px 4px 6px rgb(4, 234, 241);
+}
+
+h2 {
+  
+  color:rgb(6, 5, 85);
+  font-size: 1em;
+  
+}
+
+article h3 {
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  font: size 1em;
+}
+
+nav #titre, #titreadmin{
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+nav #titre h1{
+  display:block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  margin-left: 20px;
+  margin-right : 20px;
+  text-align:center;
+}
+
+nav #titre h2{
+  display:block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+nav #titreadmin {
+  display:block;
+}
+
+#fenetre {
+  height: auto;
+  background-color: transparent;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-around;
+  margin: 5px;
+}
+
+#fenetre h2 {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 1.5em;
+  text-align: center;
+}
+
+#concept {
+  width: auto;
+}
+
+#textbio {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+#illustration {
+  text-align: center;
+}
+
+#text {
+    width: 95%;
+    flex-wrap: wrap;
+}
+
+#onechapter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 95%;
+    margin: auto;
+}
+
+#chapter {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    padding: 5px;
+    background-color: whitesmoke;
+    color: rgb(6, 5, 85);
+    border-radius: 30px 30px 30px 30px;
+    text-align: justify;
+}
+
+#comments {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    padding: 5px;
+    border-radius: 30px 30px 30px 30px;
+    background-color: grey;
+    color: whitesmoke;
+}
+
+#newcomments {
+    
+    border-radius: 0px 0px 30px 30px;
+}
+}

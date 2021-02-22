@@ -1,5 +1,3 @@
-
-
 <section id='listcomment'>
     <h2>Liste des commentaires</h2>
     <p>En date du
@@ -38,12 +36,11 @@
             } else {
                 //echo 'Etat non publié : ' . $datacomments['etat_comment'];
 
-                echo '<td id="publi"><input type="checkbox" id="published" name="published" disabled="disabled">'; 
-                if($datacomments['etat_comment'] === '3')
-                    {
-                        echo'<p id="signale">Signalé</p>';
-                    }
-                echo'</td>';
+                echo '<td id="publi"><input type="checkbox" id="published" name="published" disabled="disabled">';
+                if ($datacomments['etat_comment'] === '3') {
+                    echo '<p id="signale">Signalé</p>';
+                }
+                echo '</td>';
                 echo '<td> <form action="index.php?idcomment=' . $datacomments['id_comment'] . '" method="post">';
                 echo '<input type="hidden" id="public" name="public" value="1" />';
                 echo '<input type="submit" nama="publier" value="Publier"/>';
