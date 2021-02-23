@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<html lang="fr">
+
 <html>
 
 <head>
@@ -68,7 +70,7 @@
             Je vous invite à partir à l'aventure numérique de mon nouveau roman.
             Chapitre après chapitre, mois après mois, l'attente sera pour vous
             l'occasion de digérer chaque étape et d'imaginer la suite... avant
-            d'être surpris... </br> Auriez-vous pris cette route.... sans doute non ! mais laissez-vous porter jusqu'à la fin...
+            d'être surpris... <br> Auriez-vous pris cette route.... sans doute non ! mais laissez-vous porter jusqu'à la fin...
           </p>
         </article>
       </section>
