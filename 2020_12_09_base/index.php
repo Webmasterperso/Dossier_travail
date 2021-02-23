@@ -66,7 +66,6 @@ if (isset($_GET['id_chapter']) && $_GET['id_chapter'] > 0 && !isset($_POST['publ
         } elseif (isset($_POST['public'])) {
             onechapter();
         } else {
-            echo 'listchapterpubli';
             listchapterpubli();
         }
     }
